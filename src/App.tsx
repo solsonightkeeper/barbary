@@ -33,7 +33,6 @@ function App() {
             <Button variant="text">Quran</Button>
             <Button variant="text">About</Button>
             <Spacer />
-            <Button icon={<Symbol icon="menu" />} />
             <Button variant="text">Search</Button>
           </AppBar>
           <Container maxWidth="lg">
