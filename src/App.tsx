@@ -1,10 +1,12 @@
 import logo from "./logo.svg";
 import "./App.css";
 import image from './assets/ka.png';
+import styles from "./svgIcon.module.css";
+import { ReactComponent as LogoIcon } from "../src/assets/logoicon.svg";
 import {
   AppBar,
   Button,
-  Container,
+  Container,  
   Footer,
   GridContainer,
   Main,
@@ -13,6 +15,9 @@ import {
   Theme,
   GridItem,
   Card,
+  SvgIcon,
+  Row,
+  Stack,
 } from "@yakad/ui";
 
 function App() {
@@ -21,53 +26,46 @@ function App() {
       <Page>
         <Main>
           <AppBar>
-            <h1>Practic</h1>
+          <SvgIcon size={5}>
+                    <LogoIcon />
+                </SvgIcon>
+                <h1>Natiq</h1>
+            <Button variant="text">Quran</Button>
+            <Button variant="text">About</Button>
             <Spacer />
-            <Button variant="link">Help</Button>
-            <Button variant="link">About</Button>
-            <Button variant="filled">Log in</Button>
+            <Button icon={<Symbol icon="menu" />} />
+            <Button variant="text">Search</Button>
           </AppBar>
-          <h1 style={{textAlign:"center"}}>This site will be operational soon</h1>
-          <Button variant="text">UK</Button>
-          <Container style={{ background: "0" }} maxWidth="md">
-            <GridContainer rowGap={1} columnGap={1}>
-              <GridItem xl={4} sm={12}>
-                <Card>
-                  <h2>Card</h2>
-                </Card>
-              </GridItem>
-              <GridItem xl={4} sm={12}>
-                <Card>
-                  <h2>Card</h2>
-                </Card>
-              </GridItem>
-              <GridItem xl={4} sm={12}>
+          <Container maxWidth="lg">
+            <GridContainer columnGap={12}>
+              <GridItem>
+            <Row>
+          <SvgIcon size={40}>
+                    <LogoIcon />
+                </SvgIcon>
+                </Row>
+                </GridItem>
+                <GridItem>
+                  <Row>
+                <h1 style={{fontSize:"5.0rem", color: "#AA8A59  "}}>النّاطِق</h1>
+                <h1 style={{fontSize:"5.0rem"}}>الْقُرآنُ</h1>
+                </Row>
+                <Stack>
+                  <p style={{fontSize: "1.7rem"}}>Natiq Quran, Multi mushaf easy to use quran app.
+research and translate based.
 
-                <Card>
-                  <h2>Card</h2>
-                </Card>
-              </GridItem>
-            </GridContainer>
+</p>
+<Button variant="filled" style={{margin: "auto"}}>GET START</Button>
+<h3 style={{textAlign: "center"}}>or</h3>
+<h2 style={{textAlign: "center"}}>Learn More!</h2>
+
+                </Stack>
+                </GridItem>
+                </GridContainer>          
           </Container>
-          <div style={{width:"100px"}}>
-          <img src={image}/>
-     </div>
         </Main>
+        <Footer></Footer>
       </Page>
-         <footer
-          style={{
-            fontSize: "2.5rem",
-            textAlign: "center",
-            borderStyle: " double none",
-            borderLeftStyle: "none",
-            borderRightStyle: "none",
-            background: "#7d7d7d7d",
-          }}
-        >
-          Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
-
-
-        </footer>
     </Theme>
   );
 }
